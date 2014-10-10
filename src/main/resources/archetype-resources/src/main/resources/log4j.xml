@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE log4j:configuration SYSTEM "http://logging.apache.org/log4j/1.2/apidocs/org/apache/log4j/xml/doc-files/log4j.dtd">
+<log4j:configuration xmlns:log4j="http://jakarta.apache.org/log4j/">
+
+	<appender name="CONSOLE" class="org.apache.log4j.ConsoleAppender">
+		<layout class="org.apache.log4j.EnhancedPatternLayout">
+			<param name="ConversionPattern" value="%-5p %d{HH:mm:ss,SS} [%t]- %c{1.} | %m%n" />
+
+			<!-- ConversionPattern with method name and line number (WARNING: very slow) -->
+			<!-- <param name="ConversionPattern" value="%-5p %d{HH:mm:ss,SS} [%t]- %c{1.}.%M(%L) | %m%n" /> -->
+		</layout>
+	</appender>
+
+	<category name="chosema">
+		<priority value="DEBUG" />
+		<appender-ref ref="CONSOLE" />
+	</category>
+
+	<category name="org.springframework">
+		<priority value="INFO" />
+		<appender-ref ref="CONSOLE" />
+	</category>
+
+	<category name="org.hibernate">
+		<priority value="ERROR" />
+		<appender-ref ref="CONSOLE" />
+	</category>
+
+	<!-- Logging of value bindings in queries -->
+	<!--<category name="org.hibernate.type">
+		<priority value="TRACE" />
+		<appender-ref ref="CONSOLE" />
+	</category> -->
+
+	<category name="org.jboss.logging">
+		<priority value="INFO" />
+		<appender-ref ref="CONSOLE" />
+	</category>
+
+	<category name="org.apache.commons">
+		<priority value="INFO" />
+		<appender-ref ref="CONSOLE" />
+	</category>
+
+	<category name="com.mysema">
+		<priority value="INFO" />
+		<appender-ref ref="CONSOLE" />
+	</category>
+
+	<root>
+	</root>
+
+</log4j:configuration>

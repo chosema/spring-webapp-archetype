@@ -1,0 +1,1 @@
+mvn clean com.mysema.maven:apt-maven-plugin:process
