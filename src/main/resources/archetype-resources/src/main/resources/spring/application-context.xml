@@ -12,6 +12,8 @@
 		http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-4.0.xsd
 		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd">
 
+	<import resource="data-source.xml" />
+
 	<util:properties id="applicationProperties" location="classpath:application.properties" />
 
 	<context:property-placeholder properties-ref="applicationProperties" />
@@ -19,13 +21,6 @@
 	<context:component-scan base-package="chosema.core" />
 
 	<context:annotation-config />
-
-	<bean id="dataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
-		<property name="driverClassName" value="${db.default.driver}" />
-		<property name="url" value="${db.default.url}" />
-		<property name="username" value="${db.default.user}" />
-		<property name="password" value="${db.default.password}" />
-	</bean>
 
 	<bean id="entityManagerFactory" class="org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean">
 		<property name="jpaVendorAdapter">
