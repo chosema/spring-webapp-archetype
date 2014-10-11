@@ -9,7 +9,7 @@
 	<version>${version}</version>
 
 	<name>Spring Maven Webapp</name>
-	<url>http://maven.apache.org</url>
+	<url>https://github.com/chosema/spring-webapp-archetype</url>
 
 	<properties>
 		<!-- Generic -->

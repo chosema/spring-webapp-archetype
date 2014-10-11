@@ -47,7 +47,7 @@
 		<appender-ref ref="CONSOLE" />
 	</category>
 
-	<category name="org.ocpsoft">
+	<category name="com.ocpsoft">
 		<priority value="INFO" />
 		<appender-ref ref="CONSOLE" />
 	</category>

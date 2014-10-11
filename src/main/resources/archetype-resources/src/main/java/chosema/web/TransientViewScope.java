@@ -21,7 +21,7 @@ public class TransientViewScope implements Scope {
 		final Map<String, Object> viewMap = getSessionViewMap(facesContext);
 
 		final Object createdObject;
-		if (requestMap.containsKey(VIEW_SCOPE_ATTR) || facesContext.isPostback()) {
+		if (facesContext.isPostback() || requestMap.containsKey(VIEW_SCOPE_ATTR)) {
 			if (viewMap.containsKey(name)) {
 				createdObject = viewMap.get(name);
 			} else {
