@@ -8,12 +8,13 @@ import javax.faces.application.FacesMessage;
 import javax.faces.context.FacesContext;
 import javax.servlet.http.HttpServletResponse;
 
-import org.apache.log4j.Logger;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 public abstract class AbstractController implements Serializable {
 	private static final long serialVersionUID = 1L;
 
-	protected final Logger LOGGER = Logger.getLogger(this.getClass());
+	protected final Logger LOGGER = LoggerFactory.getLogger(this.getClass());
 
 	public static final String TITLE_INFO = "Information";
 	public static final String TITLE_WARN = "Warning";
@@ -106,7 +107,7 @@ public abstract class AbstractController implements Serializable {
 			facesContext.getExternalContext().responseSendError(response, message);
 			facesContext.responseComplete();
 		} catch (final IOException e) {
-			LOGGER.error(e, e);
+			LOGGER.error(e.getMessage(), e);
 		}
 	}
 
